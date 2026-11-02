@@ -1,0 +1,23 @@
+/* ФинКомпас — дизайн-токены. Источник значений: tokens.json */
+:root {
+  --bg-page: #F6F8F8; --bg-surface: #FFFFFF; --bg-muted: #EDF1F2; --border: #D8DEE3;
+  --text-1: #14202B; --text-2: #52606D;
+  --accent: #0F766E; --accent-hover: #0B5F59; --accent-soft: #DDF3F0; --on-accent: #FFFFFF;
+  --income: #15803D; --expense: #B91C1C; --warning: #B45309; --info: #1D4ED8;
+  --soft-income: #DCFCE7; --soft-expense: #FEE2E2; --soft-warning: #FEF3C7;
+  --shadow: 0 1px 3px rgba(20, 32, 43, .08); --shadow-lg: 0 12px 32px rgba(20, 32, 43, .18);
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px; --space-6: 32px; --space-7: 48px;
+  --radius-sm: 8px; --radius-md: 12px; --radius-full: 999px;
+  --control: 44px; --dur-fast: 120ms; --dur-base: 240ms; --dur-slow: 400ms;
+  --font: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  color-scheme: light;
+}
+[data-theme='dark'] {
+  --bg-page: #0F1419; --bg-surface: #1A2129; --bg-muted: #242D37; --border: #2E3843;
+  --text-1: #E6EDF3; --text-2: #9FB0C0;
+  --accent: #2DD4BF; --accent-hover: #5EEAD4; --accent-soft: #123B38; --on-accent: #0F1419;
+  --income: #4ADE80; --expense: #F87171; --warning: #FBBF24; --info: #60A5FA;
+  --soft-income: #14351F; --soft-expense: #3F1D1D; --soft-warning: #3B2C0B;
+  --shadow: none; --shadow-lg: 0 12px 32px rgba(0, 0, 0, .5);
+  color-scheme: dark;
+}
