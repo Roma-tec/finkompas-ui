@@ -34,7 +34,7 @@ function useCase() {
 
 /* ---------- User Flow Map, A4 альбомная ---------- */
 function flowMap() {
-  const W = 1123, H = 794, C = { screen: ['#DDF3F0', ACC], action: ['#DBEAFE', '#1D4ED8'], decision: ['#FEF3C7', '#B45309'], goal: ['#DCFCE7', '#15803D'], err: ['#FEE2E2', '#B91C1C'] };
+  const W = 1123, H = 794, C = { screen: ['#FFFFFF', '#374151'], action: ['#EEF0F2', '#9CA3AF'], decision: ['#FFFFFF', '#374151'], goal: ['#E5E7EB', '#14202B'], err: ['#FFFFFF', '#B91C1C'] };
   const n = {}, shapes = [], arrows = [];
   const box = (id, x, y, t, k = 'screen', w = 120, h = 44) => { n[id] = { x, y, w, h }; const [f, s] = C[k]; shapes.push(`<rect x="${x - w / 2}" y="${y - h / 2}" width="${w}" height="${h}" rx="6" fill="${f}" stroke="${s}" stroke-width="1.5"/>` + lines(x, y, t, { size: 11 })); };
   const oval = (id, x, y, t, k, w = 104, h = 56) => { n[id] = { x, y, w, h }; const [f, s] = C[k]; shapes.push(`<rect x="${x - w / 2}" y="${y - h / 2}" width="${w}" height="${h}" rx="${h / 2}" fill="${f}" stroke="${s}" stroke-width="2"/>` + lines(x, y, t, { size: 11, w: 600 })); };
@@ -76,8 +76,13 @@ function flowMap() {
   link('check', 'goalx', 'Да', { lx: 985, ly: Y(3) - 7 });
   arrows.push(`<path d="M930 ${Y(3) + 38}V${Y(6) - 22}" fill="none" stroke="${C.err[1]}" stroke-width="1.3" marker-end="url(#ae)"/>`, txt(935, Y(4) + 10, 'Нет', { size: 10, fill: C.err[1], a: 'start' }));
   // легенда
-  const lx = 48, ly = 712, leg = [['screen', 'Экран'], ['action', 'Действие'], ['decision', 'Решение'], ['goal', 'Цель'], ['err', 'Ошибка']];
-  const legend = `<rect x="24" y="${ly - 22}" width="${W - 48}" height="64" rx="8" fill="#FFFFFF" stroke="#D8DEE3"/>` + txt(lx, ly - 2, 'Легенда', { size: 11, w: 700, a: 'start' }) + leg.map(([k, t], i) => `<rect x="${lx + i * 120}" y="${ly + 8}" width="18" height="14" rx="3" fill="${C[k][0]}" stroke="${C[k][1]}"/>` + txt(lx + 24 + i * 120, ly + 19, t, { size: 11, a: 'start' })).join('') + txt(lx + 620, ly + 19, 'Весь поток идёт слева направо к одной цели. Точка входа одна.', { size: 11, fill: MUTE, a: 'start' });
+  const ly = 712, shapeTxt = (x, t) => txt(x, ly + 22, t, { size: 11, a: 'start', fill: MUTE });
+  const legend = `<rect x="24" y="${ly - 22}" width="${W - 48}" height="64" rx="8" fill="#FFFFFF" stroke="#D8DEE3"/>` + txt(48, ly - 2, 'Легенда', { size: 11, w: 700, a: 'start' }) + txt(120, ly - 2, 'Весь поток идёт слева направо к одной цели. Точка входа одна.', { size: 11, a: 'start', fill: MUTE }) +
+    `<rect x="48" y="${ly + 10}" width="30" height="16" rx="8" fill="#FFFFFF" stroke="#374151"/>` + shapeTxt(84, 'Овал: вход и цель') +
+    `<rect x="232" y="${ly + 10}" width="30" height="16" rx="3" fill="#FFFFFF" stroke="#374151"/>` + shapeTxt(268, 'Прямоугольник: экран') +
+    `<rect x="440" y="${ly + 10}" width="30" height="16" rx="3" fill="#EEF0F2" stroke="#9CA3AF"/>` + shapeTxt(476, 'Серый блок: действие') +
+    `<path d="M663 ${ly + 8}L679 ${ly + 18}L663 ${ly + 28}L647 ${ly + 18}Z" fill="#FFFFFF" stroke="#374151"/>` + shapeTxt(686, 'Ромб: решение') +
+    `<rect x="812" y="${ly + 10}" width="30" height="16" rx="3" fill="#FFFFFF" stroke="#B91C1C"/>` + shapeTxt(848, 'Красная рамка: ошибка');
   const head = txt(24, 44, 'ФинКомпас: User Flow Map', { size: 22, w: 700, a: 'start' }) + txt(24, 68, 'Цель всех маршрутов: пользователь контролирует свои финансы', { size: 13, fill: MUTE, a: 'start' });
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1l8 4l-8 4z" fill="${LINE}"/></marker><marker id="ae" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1l8 4l-8 4z" fill="${C.err[1]}"/></marker></defs><rect width="${W}" height="${H}" fill="#F6F8F8"/>${head}${arrows.join('')}${shapes.join('')}${legend}</svg>`;
 }
