@@ -61,6 +61,15 @@ fs.writeFileSync('site/moodboard.html', showcase('Moodboard', `<section class="c
 <section class="c4 card stack"><h2>Шрифт Inter</h2><div style="font-size:40px;line-height:48px;font-weight:700">247 350 ₽</div><div class="small">Кириллица читается в мелких размерах, цифры табличные: суммы стоят ровно по разрядам.</div><div class="cap muted">400 · 500 · 600 · 700</div></section>
 </div>`));
 
+
+// Отклонённые варианты стилистики: сравнение с выбранным moodboard
+const board = (file, title, idea, bg, ink, accent, why, sample) => fs.writeFileSync(`site/${file}.html`, showcase(title, `<section class="card stack"><h2>${idea}</h2><p class="muted">${why}</p></section>
+<div class="grid"><section class="c6" style="border-radius:12px;min-height:240px;padding:24px;background:${bg};color:${ink};display:flex;flex-direction:column;justify-content:flex-end;gap:8px"><h2 style="color:inherit">${sample[0]}</h2><p>${sample[1]}</p></section>
+<section class="c6" style="border-radius:12px;min-height:240px;padding:24px;background:${accent};color:${bg};display:flex;flex-direction:column;justify-content:flex-end;gap:8px"><h2 style="color:inherit">247 350 ₽</h2><p>${sample[2]}</p></section>
+<section class="c12 card stack"><h2>Палитра</h2><div class="row wrap">${[bg, ink, accent].map((c) => `<div style="width:160px"><div style="height:64px;border-radius:8px;background:${c};border:1px solid var(--border)"></div><div class="cap">${c}</div></div>`).join('')}</div></section></div>`));
+board('moodboard-b', 'Moodboard B', 'Вариант B: тёплый блокнот', '#F5ECD9', '#3B2A1A', '#9A5B2C', 'Скевоморфизм: бумага, кожа, рукописные заметки. Отклонён: фактуры тяжелее загружаются, плотные таблицы читаются хуже.', ['Записная книжка расходов', 'Страницы, закладки, чернила', 'Домашняя бухгалтерия']);
+board('moodboard-c', 'Moodboard C', 'Вариант C: неоновые плитки', '#101018', '#F2F2FF', '#C026D3', 'Плитки в духе Metro и яркий неон. Отклонён: яркий цвет спорит со смысловыми цветами дохода и расхода и усиливает тревогу.', ['Деньги как игра', 'Большие плитки, резкие акценты', 'Энергия и азарт']);
+
 const states = ['Default', 'Hover', 'Pressed', 'Disabled'];
 const ic = (n) => `<span data-ic="${n}"></span>`;
 fs.writeFileSync('site/ui-kit.html', showcase('UI-кит', `<section class="card stack"><h2>Кнопки</h2>
@@ -87,7 +96,7 @@ fs.writeFileSync('site/cover.html', `${head('Обложка')}
 
 const links = [
   ['Приложение', [['login', 'Вход и регистрация'], ['dashboard', 'Обзор'], ['transactions', 'Операции и импорт'], ['budgets', 'Бюджеты'], ['goals', 'Цели'], ['accounts', 'Счета и категории'], ['reports', 'Отчёты и экспорт'], ['templates', 'Шаблоны бюджетов'], ['history', 'История действий'], ['settings', 'Настройки'], ['admin', 'Администрирование'], ['mobile', 'Мобильная версия']]],
-  ['Дизайн', [['screens', 'Все макеты'], ['ui-kit', 'UI-кит'], ['moodboard', 'Moodboard'], ['flow-map', 'User Flow Map'], ['use-case', 'UML Use-Case'], ['cover', 'Обложка']]]
+  ['Дизайн', [['screens', 'Все макеты'], ['ui-kit', 'UI-кит'], ['moodboard', 'Moodboard'], ['moodboard-b', 'Moodboard B'], ['moodboard-c', 'Moodboard C'], ['flow-map', 'User Flow Map'], ['use-case', 'UML Use-Case'], ['cover', 'Обложка']]]
 ];
 fs.writeFileSync('site/index.html', `${head('Карта сайта')}
 <body><main class="content" style="margin:0 auto">
