@@ -2,6 +2,7 @@
 import fs from 'fs'; import os from 'os'; import path from 'path';
 import { serve, browser } from './lib.mjs';
 import { flows, FLOW_FILES } from './build-flows.mjs';
+import { safe } from './svg-safe.mjs';
 
 const PORT = 8125, B = `http://localhost:${PORT}/`, SVG = 'design/export/svg', PNG = 'design/export/screens';
 const srv = await serve('site', PORT), br = await browser(), page = await br.newPage();
@@ -104,6 +105,7 @@ for (const [n, url, size, role] of screens) {
 }
 for (const [n, url, size, role, act] of states) { await setState('light', role); await shot(`Prototype_${n}`, `${url}.html`, size, false, PROTO, act); }
 flows(SVG);
+for (const f of fs.readdirSync(SVG)) fs.writeFileSync(`${SVG}/${f}`, safe(fs.readFileSync(`${SVG}/${f}`, 'utf8')));
 
 // Диаграммы: PNG из SVG
 for (const [f, w, h] of [['UML_UseCase', 1240, 800], ['A4_User_Flow_Map', 1123, 794], ...FLOW_FILES.map((x) => [x, 1123, 794])]) {
