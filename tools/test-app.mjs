@@ -151,6 +151,11 @@ for (const p of ['dashboard', 'transactions', 'budgets', 'goals', 'accounts', 'r
 await page.setViewport({ width: 834, height: 1194 });
 for (const p of ['dashboard', 'transactions', 'reports']) { await go(p + '.html'); await wait(80); const o = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth); ok('ширина 834: ' + p, o <= 0, o > 0 ? 'лишние ' + o + ' px' : ''); }
 
+for (const w of [1024, 1920]) {
+  await page.setViewport({ width: w, height: 1000 });
+  for (const p of ['dashboard', 'transactions', 'reports']) { await go(p + '.html'); await wait(80); const o = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth); ok('ширина ' + w + ': ' + p, o <= 0, o > 0 ? 'лишние ' + o + ' px' : ''); }
+}
+
 ok('ошибок JavaScript нет', errs.length === 0, errs.slice(0, 3).join(' | '));
 await br.close(); srv.close();
 const failed = res.filter((x) => !x).length;
