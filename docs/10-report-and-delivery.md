@@ -31,6 +31,8 @@
 
 Файл Figma: https://www.figma.com/design/13cyrQG2Ir2gv4kGTFjgeG
 
+Кликабельный прототип в Figma: https://www.figma.com/proto/13cyrQG2Ir2gv4kGTFjgeG?node-id=1-4864&starting-point-node-id=1%3A4864&scaling=contain
+
 ## 10.3. Что сделать перед сдачей
 
 - [ ] Заполнить поля в квадратных скобках: группа, преподаватель, даты.

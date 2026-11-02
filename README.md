@@ -88,7 +88,7 @@ finkompas-ui/
 
 ## Как сделаны макеты
 
-Макеты экспортированы из работающего приложения в SVG с настоящим текстом, поэтому суммы и состояния на них совпадают с поведением интерфейса. Те же SVG загружены в [файл Figma](https://www.figma.com/design/13cyrQG2Ir2gv4kGTFjgeG), его устройство описано в [docs/09-handoff.md](docs/09-handoff.md).
+Макеты экспортированы из работающего приложения в SVG с настоящим текстом, поэтому суммы и состояния на них совпадают с поведением интерфейса. Те же SVG загружены в [файл Figma](https://www.figma.com/design/13cyrQG2Ir2gv4kGTFjgeG), там же собран [кликабельный прототип](https://www.figma.com/proto/13cyrQG2Ir2gv4kGTFjgeG?node-id=1-4864&starting-point-node-id=1%3A4864&scaling=contain). Устройство файла описано в [docs/09-handoff.md](docs/09-handoff.md).
 
 ## Лицензии
 
