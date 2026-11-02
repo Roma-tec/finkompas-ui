@@ -10,12 +10,12 @@
 
 - Техническое задание с ролями и уровнями доступа.
 - Аналитическое исследование: аудитория, персоны, конкуренты.
-- 12 сценариев, UML Use-Case, User Flow, User Flow Map на листе А4.
+- 12 сценариев, UML Use-Case, 4 листа User Flow с экранами, User Flow Map на листе А4.
 - 4 черновых прототипа, moodboard, 2 UI-кита.
 - 12 экранов: 13 фреймов в светлой и тёмной темах.
-- 36 векторных SVG, 36 PNG, 2 векторных PDF.
+- 102 векторных SVG, 102 PNG, 3 векторных PDF, включая единый отчёт.
 - Токены, 57 значков, шрифт Inter, описание анимации и передачи в разработку.
-- Рабочее приложение в `site/`: 48 автоматических проверок пройдены.
+- Рабочее приложение в `site/`: 54 автоматические проверки пройдены.
 
 ## Обязательные пункты задания
 
@@ -53,7 +53,7 @@
 | S11 | Шаблоны бюджетов | [SVG](design/export/svg/S11_Templates_Light.svg) | [SVG](design/export/svg/S11_Templates_Dark.svg) |
 | S12 | Администрирование | [SVG](design/export/svg/S12_Admin_Light.svg) | [SVG](design/export/svg/S12_Admin_Dark.svg) |
 
-Всё сразу: [FinKompas_Makety.pdf](design/export/FinKompas_Makety.pdf), [FinKompas_Diagrammy.pdf](design/export/FinKompas_Diagrammy.pdf).
+Всё сразу: [FinKompas_Otchet.pdf](design/export/FinKompas_Otchet.pdf), [FinKompas_Makety.pdf](design/export/FinKompas_Makety.pdf), [FinKompas_Diagrammy.pdf](design/export/FinKompas_Diagrammy.pdf).
 
 ## Приложение
 
