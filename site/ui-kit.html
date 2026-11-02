@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UI-кит — ФинКомпас</title>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<main class="content" style="margin:0 auto">
+<div class="row between wrap"><h1>UI-кит</h1><a class="btn sec" href="index.html">К карте сайта</a></div>
+<section class="card stack"><h2>Кнопки</h2>
+<div class="row wrap"><span class="small muted" style="width:90px">Primary</span><button class="btn "  style="">Default</button><button class="btn "  style="background:var(--accent-hover);">Hover</button><button class="btn "  style="transform:scale(.97);">Pressed</button><button class="btn " disabled style="">Disabled</button></div>
+<div class="row wrap"><span class="small muted" style="width:90px">Secondary</span><button class="btn sec"  style="">Default</button><button class="btn sec"  style="background:var(--bg-muted);">Hover</button><button class="btn sec"  style="transform:scale(.97);">Pressed</button><button class="btn sec" disabled style="">Disabled</button></div>
+<div class="row wrap"><span class="small muted" style="width:90px">Ghost</span><button class="btn ghost"  style="">Default</button><button class="btn ghost"  style="">Hover</button><button class="btn ghost"  style="transform:scale(.97);">Pressed</button><button class="btn ghost" disabled style="">Disabled</button></div>
+<div class="row wrap"><span class="small muted" style="width:90px">Danger</span><button class="btn danger"  style="">Default</button><button class="btn danger"  style="">Hover</button><button class="btn danger"  style="transform:scale(.97);">Pressed</button><button class="btn danger" disabled style="">Disabled</button></div>
+<div class="row wrap"><span class="small muted" style="width:90px">Со значком</span><button class="btn"><span data-ic="plus"></span>Операция</button><button class="btn sec icon" aria-label="Скрыть суммы"><span data-ic="eye"></span></button><button class="btn sm">Малая</button></div></section>
+<div class="grid"><section class="card c6 stack"><h2>Поля ввода</h2>
+<label class="f">Обычное<input type="text" placeholder="Подсказка" aria-label="Обычное"></label><label class="f">Заполненное<input type="text" value="84 350 ₽"></label><label class="f">Ошибка<input type="text" class="invalid" value="0"><span class="err">Введите сумму больше нуля</span></label><label class="f">Выпадающий список<select><option>Основная карта</option></select></label></section>
+<section class="card c6 stack"><h2>Выбор</h2><label class="check"><input type="checkbox" checked>Чекбокс включён</label><label class="check"><input type="checkbox">Чекбокс выключен</label><label class="check"><input type="radio" name="r" checked style="accent-color:var(--accent);width:18px;height:18px">Радиокнопка</label><label class="switch">Переключатель<input type="checkbox" checked></label><label class="switch">Переключатель выключен<input type="checkbox"></label><div class="seg"><button class="on">Расход</button><button>Доход</button><button>Перевод</button></div></section>
+<section class="card c6 stack"><h2>Статусы</h2><div class="row wrap"><span class="badge ok">В норме</span><span class="badge w">Внимание</span><span class="badge x">Превышено на 900 ₽</span><span class="badge">Не входит в баланс</span></div><div class="stack" style="gap:8px"><div class="bar"><i style="width:38%"></i></div><div class="bar w"><i style="width:89%"></i></div><div class="bar x"><i style="width:100%"></i></div></div></section>
+<section class="card c6 stack"><h2>Уведомление и загрузка</h2><div class="toast" style="animation:none"><span class="grow">Операция сохранена</span><button type="button">Отменить</button></div><div class="skel"></div></section>
+<section class="card c12 stack"><h2>Типографика</h2><div style="font-size:40px;line-height:48px;font-weight:700">Display 40/48</div><h1>H1 28/36</h1><h2>H2 20/28</h2><p>Body 16/24</p><p class="small">Body Small 14/20</p><p class="cap">Caption 12/16</p></section></div>
+<script>addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-ic]').forEach(function(e){e.outerHTML=FK.icon(e.dataset.ic)})})</script>
+</main>
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
