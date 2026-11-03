@@ -88,7 +88,7 @@ fs.writeFileSync('site/cover.html', `${head('Обложка')}
 <main style="min-height:100vh;padding:80px;display:flex;flex-direction:column;justify-content:space-between">
 <div class="row" style="gap:16px"><svg width="56" height="56" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" fill="#fff"/><circle cx="20" cy="20" r="13" stroke="#0B5F59" stroke-width="2"/><path d="M26 14l-3.6 8.4L14 26l3.6-8.4L26 14z" fill="#0B5F59"/></svg><strong style="font-size:28px">ФинКомпас</strong></div>
 <div><h1 style="font-size:64px;line-height:72px;max-width:900px">Проект интерфейса системы управления финансами</h1><p style="font-size:24px;line-height:32px;margin-top:24px">Лабораторная работа S2G11 «Проект интерфейса программной системы»</p></div>
-<p style="font-size:18px">Быстряков Роман · ${new Date().getFullYear()}</p>
+<p style="font-size:18px">Кузнецов Е. А. · ${new Date().getFullYear()}</p>
 </main>
 </body>
 </html>
